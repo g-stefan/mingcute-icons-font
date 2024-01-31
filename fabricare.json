@@ -1,0 +1,18 @@
+{
+	"solution": {
+		"name" : "mingcute-icons-font",
+		"type" : "generic",
+		"projects": [
+			{
+				"name" : "mingcute-icons",
+				"SPDX-License-Identifier": "Apache-2.0",
+				"sourceLink" : "https://github.com/Richard9394/MingCute",
+				"version" : "2.92",
+				"noVersion" : true
+			}
+		],
+		"releaseName" : "mingcute-icons",
+		"releaseOutput" : true,
+		"releaseNoPlatform" : true
+	}
+}
