@@ -1,5 +1,5 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: vendor-mingcute-icons
+Upstream-Name: mingcute-icons-font
 Upstream-Contact: Grigore Stefan <g_stefan@yahoo.com>
 Source: https://github.com/g-stefan/mingcute-icons-font
 License: MIT
