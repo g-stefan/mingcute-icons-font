@@ -27,6 +27,8 @@ Shell.mkdirRecursivelyIfNotExists("temp/svg");
 var outputPath = Shell.getcwd() + "\\output";
 
 Shell.setenv("PATH", "C:\\Program Files\\Inkscape\\bin;" + Shell.getenv("PATH"));
+// Inkscape problem [https://gitlab.com/inkscape/inkscape/-/issues/4716]
+Shell.setenv("SELF_CALL","none");
 
 // ---
 
@@ -55,9 +57,9 @@ for (var i = 0; i < dirList.length; ++i) {
 		Shell.filePutContents("temp/svg-1/" + newName + ".svg", svgContent);
 
 		job.addThread(function(icon) {
-			Shell.system("inkscape --without-gui --export-type=\"png\" \"temp/svg-1/" + icon + ".svg\" \"--export-filename=temp/png-1/" + icon + ".png\" --export-width=768");
+			Shell.system("inkscape --export-type=\"png\" \"temp/svg-1/" + icon + ".svg\" \"--export-filename=temp/png-1/" + icon + ".png\" --export-width=768");
 			if (!Shell.fileExists("temp/png-1/" + icon + ".png")) { // try again (can happen/antivirus scan)
-				Shell.system("inkscape --without-gui --export-type=\"png\" \"temp/svg-1/" + icon + ".svg\" \"--export-filename=temp/png-1/" + icon + ".png\" --export-width=768");
+				Shell.system("inkscape --export-type=\"png\" \"temp/svg-1/" + icon + ".svg\" \"--export-filename=temp/png-1/" + icon + ".png\" --export-width=768");
 			};
 			if (Shell.fileExists("temp/png-1/" + icon + ".png")) {
 				Shell.system("quantum-script fabricare/source/process.qs.js \"" + icon + "\"");
