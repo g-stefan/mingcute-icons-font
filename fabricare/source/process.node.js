@@ -18,7 +18,7 @@ svgtofont({
 	},
 	website : {
 		title : "Custom MingCute Icons Font",
-		version : "2.92",
+		version : "2.96",
 		logo : "",
 		meta : {
 			description : "",
