@@ -49,7 +49,7 @@ for (var i = 0; i < dirList.length; ++i) {
 	for (var j = 0; j < fileList.length; ++j) {
 		var filename = Shell.getFileName(fileList[j]);
 		var basename = Shell.getFileBasename(filename);
-		var newName = basename.replace("_line", "").replace("_", "-").toLowerCaseAscii();
+		var newName = basename.replace("_line", "").replace("_", "-").toLowerCaseASCII();
 
 		var svgContent = Shell.fileGetContents(fileList[j]).replace(basename, newName);
 		svgContent = svgContent.replace("fill=\"#09244B\"", "fill=\"#000000\" stroke=\"#FFFFFF\" stroke-width=\"0\"");
